@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+  xsi:type="MailApp">
+  <Id>fffb206f-7b25-4693-9b47-493d468292ed</Id>
+  <Version>1.0.0.5</Version>
+  <ProviderName>CID</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="US CORE"/>
+  <Description DefaultValue="Assistant to start creating a CORE order."/>
+  <IconUrl DefaultValue="https://xsan4es.github.io/addin-us/assets/logo-x32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://xsan4es.github.io/addin-us/assets/logo-x64.png"/>
+  <SupportUrl DefaultValue="https://www.cid.uk.com/#feedback"/>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.13">
+      <Set Name="Mailbox" MinVersion="1.13"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://xsan4es.github.io/addin-us/"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+	</Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.13">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <SupportsSharedFolders>true</SupportsSharedFolders>
+            <FunctionFile resid="Commands.Url"/>
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgReadGroup">
+                  <Label resid="CommandsGroup.Label"/>
+                  <Control xsi:type="Button" id="msgReadButtonRedirect">
+                    <Label resid="RedirectButton.Label"/>
+                    <Supertip>
+                      <Title resid="RedirectButton.SupertipTitle"/>
+                      <Description resid="RedirectButton.SupertipText"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16"/>
+                      <bt:Image size="32" resid="Icon.32"/>
+                      <bt:Image size="80" resid="Icon.80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>openCoreCreateJobPage</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgComposeGroup">
+                  <Label resid="CommandsGroup.Label"/>
+                  <Control xsi:type="Button" id="msgComposeButtonRedirect">
+                    <Label resid="RedirectButton.Label"/>
+                    <Supertip>
+                      <Title resid="RedirectButton.SupertipTitle"/>
+                      <Description resid="RedirectButton.SupertipText"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16"/>
+                      <bt:Image size="32" resid="Icon.32"/>
+                      <bt:Image size="80" resid="Icon.80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>openCoreCreateJobPage</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Resources>
+        <bt:Images>
+          <bt:Image id="Icon.16" DefaultValue="https://xsan4es.github.io/addin-us/assets/logo-x16.png"/>
+          <bt:Image id="Icon.32" DefaultValue="https://xsan4es.github.io/addin-us/assets/logo-x32.png"/>
+          <bt:Image id="Icon.80" DefaultValue="https://xsan4es.github.io/addin-us/assets/logo-x80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="Commands.Url" DefaultValue="https://xsan4es.github.io/addin-us/commands.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="CommandsGroup.Label" DefaultValue="CORE"/>
+          <bt:String id="RedirectButton.Label" DefaultValue="Redirect"/>
+          <bt:String id="RedirectButton.SupertipTitle" DefaultValue="CORE"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="RedirectButton.SupertipText" DefaultValue="Open an order creation page"/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>
