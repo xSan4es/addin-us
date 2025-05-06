@@ -1,1 +1,1 @@
-window.appConfig={CoreUrl:"https://core.cwl-west.com",InternalUrl:"https://api-gateway.cwl-west.com/api/internal-api",IdentityUrl:"https://identity-service.cwl-west.com/api"};
+window.appConfig={CoreUrl:"https://core.cwl-west.com",InternalUrl:"https://api-gateway.cwl-west.com/api/internal-api",IdentityUrl:"https://identity-service.cwl-west.com/api",ElasticSearchUrl:"https://api-gateway.cid-uk.com/api/elastic-search"};
