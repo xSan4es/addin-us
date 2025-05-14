@@ -1,0 +1,1 @@
+window.appConfig={CoreUrl:"https://core.cwl-west.com",EmailApiUrl:"https://api-gateway.cwl-west.com/api/email-service",InternalApiUrl:"https://api-gateway.cwl-west.com/api/internal-api",IdentityApiUrl:"https://api-gateway.cwl-west.com/api/identity-service",ElasticSearchUrl:"https://api-gateway.cwl-west.com/api/elastic-search"};
